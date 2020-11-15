@@ -1,0 +1,59 @@
+﻿@model IEnumerable<demo2.Models.vtype>
+
+@{
+    ViewData["Title"] = "viewall";
+}
+
+<div class="container" style="margin-left:0%">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Home" asp-action="GetV">Give vote</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Home" asp-action="Viewallv">Result</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">View Profile</a>
+        </li>
+    </ul>
+</div>
+<hr />
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.voting_type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.start_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.end_date)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.voting_type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.start_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.end_date)
+                </td>
+                <td>
+                    <a role="button" class="btn btn-dark" asp-controller="Home" asp-action="viewres" asp-route-id="@item.vtypeId">Result</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

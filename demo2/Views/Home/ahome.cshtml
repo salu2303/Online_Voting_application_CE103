@@ -1,0 +1,30 @@
+﻿
+    <div class="container" style="margin-left:0%">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Home" asp-action="Createv">Create new voting </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Home" asp-action="Addcand">Add candidates</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Home" asp-action="addvoter">Add voters</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Home" asp-action="viewall">Result</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Home" asp-action="SendEmail">Send mail</a>
+            </li>
+        </ul>
+        @if (ViewBag.noa != null)
+        {
+            <script type="text/javascript">
+
+            window.onload = function () {
+                alert("@ViewBag.noa");
+            };
+            </script>
+
+        }
+    </div>

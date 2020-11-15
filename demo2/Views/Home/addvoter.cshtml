@@ -1,0 +1,54 @@
+﻿@model demo2.Models.avoter
+
+@{
+    ViewData["Title"] = "addvoter";
+}
+
+<div class="container" style="margin-left:0%">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Home" asp-action="Createv">Create new voting </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Home" asp-action="Addcand">Add candidates</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Home" asp-action="addvoter">Add voters</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Home" asp-action="viewall">Result</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Home" asp-action="SendEmail">Send mail</a>
+        </li>
+    </ul>
+</div>
+<hr />
+<div class="row" style="margin-left:41%">
+    <div class="col-md-4">
+        <form asp-action="addvoter">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="password" class="control-label"></label>
+                <input asp-for="password" class="form-control" />
+                <span asp-validation-for="password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="vtypeId" class="control-label"></label>
+                <select asp-for="vtypeId" class="form-control" asp-items="ViewBag.vtypeId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+

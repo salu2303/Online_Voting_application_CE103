@@ -1,0 +1,45 @@
+﻿@model demo2.Models.avoter
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="container" style="margin-left:0%">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Home" asp-action="GetV">Give vote</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Home" asp-action="Viewallv">Result</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">View Profile</a>
+        </li>
+    </ul>
+</div>
+<hr />
+<h3 style="color:cornflowerblue;margin-left:20%">Enter Your Given Credentials here for Voting</h3>
+
+<div class="row" style="margin-left:35%">
+    <div class="col-md-4">
+        <form asp-action="GetV">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="password" class="control-label"></label>
+                <input asp-for="password" class="form-control" />
+                <span asp-validation-for="password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" style="margin-left:30%" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

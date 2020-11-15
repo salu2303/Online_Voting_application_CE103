@@ -1,0 +1,63 @@
+﻿@model demo2.Models.vtype
+
+
+@{
+    ViewData["Title"] = "Createv";
+}
+
+
+
+
+<div class="container" style="margin-left:0%">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Home" asp-action="Createv">Create new voting </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Home" asp-action="Addcand">Add candidates</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Home" asp-action="addvoter">Add voters</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Home" asp-action="viewall">Result</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Home" asp-action="SendEmail">Send mail</a>
+        </li>
+    </ul>
+</div>
+<hr />
+<div class="row" style="margin-left:41%">
+    <div class="col-md-4">
+        <form asp-action="Createv">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="voting_type" class="control-label"></label>
+                <input asp-for="voting_type" class="form-control" />
+                <span asp-validation-for="voting_type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="start_date" class="control-label"></label>
+                <input asp-for="start_date" class="form-control" />
+                <span asp-validation-for="start_date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="end_date" class="control-label"></label>
+                <input asp-for="end_date" class="form-control" />
+                <span asp-validation-for="end_date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="no" class="control-label"></label>
+                <input asp-for="no" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+

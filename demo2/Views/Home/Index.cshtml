@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@{
+    Layout = "_Layout";
+}
+    <div class="text-center">
+        <div class="container" style="margin-left:0%">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="GetV">Give vote</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="Viewallv">Result</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">View Profile</a>
+                </li>
+            </ul>
+        </div><hr />
+        @if (ViewBag.msg != null)
+        {
+            <script type="text/javascript">
+
+            window.onload = function () {
+                alert("@ViewBag.msg");
+            };
+            </script>
+
+        }
+        @if (ViewBag.late != null)
+        {
+            <script type="text/javascript">
+
+            window.onload = function () {
+                alert("@ViewBag.late");
+            };
+            </script>
+
+        }
+        @if (ViewBag.no != null)
+        {
+            <script type="text/javascript">
+
+            window.onload = function () {
+                alert("@ViewBag.no");
+            };
+            </script>
+
+        }
+    </div>

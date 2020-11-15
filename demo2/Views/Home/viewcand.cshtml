@@ -1,0 +1,48 @@
+﻿@model IEnumerable<demo2.Models.cand>
+
+@{
+    ViewData["Title"] = "viewcand";
+}
+
+<h1>viewcand</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.profession)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vtypeId)
+            </th>
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.profession)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.vtypeId)
+                </td>
+                <td>
+                    <a asp-action="Vote" asp-route-id="@item.Id">Vote</a> |
+
+                </td>
+               
+            </tr>
+        }
+    </tbody>
+</table>
+
